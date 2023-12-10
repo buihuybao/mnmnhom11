@@ -17,7 +17,7 @@ Auth::routes();
 //url: /admin se den url: admin/user
 Route::get("admin", function () {
     //di chuyen den mot url
-    return redirect(url('login'));
+    return redirect(url('login'));     
 });
 //url: logout
 Route::get("logout", function () {
@@ -43,7 +43,6 @@ Route::group(["prefix" => "admin", "middleware" => ['auth', 'auth.admin']], func
 
 });
 // frontend
-
 Route::get('/', 'pageController@getindex');
 // loai sản phẩm
 Route::get('loai-san-pham/{type}', 'pageController@getloaisp');
